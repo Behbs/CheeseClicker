@@ -1,4 +1,4 @@
 extends Sprite2D
 
 func _process(delta):
-	rotate(0.002)
+	rotate(deg_to_rad(90) * delta)

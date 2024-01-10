@@ -19,6 +19,10 @@ config/icon="res://Sprites/icon.svg"
 
 Queijaria="*res://Scripts/Queijaria.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 click={
