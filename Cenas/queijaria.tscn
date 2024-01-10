@@ -1,0 +1,193 @@
+[gd_scene load_steps=17 format=3 uid="uid://bpqh2ufcwwf4t"]
+
+[ext_resource type="Texture2D" uid="uid://df5u4y5mx8mbs" path="res://Sprites/cheesery bd267916-39f1-421a-89e1-938be1afed6e.png" id="1_xgnto"]
+[ext_resource type="Texture2D" uid="uid://c20oguasly6lr" path="res://Sprites/Top_view_cheese_18951d40-b301-4496-bd38-d622181a2d48-removebg-preview.png" id="2_2cf8r"]
+[ext_resource type="Texture2D" uid="uid://dnksjk665dcgd" path="res://Sprites/one_Cheese_slic_eedcd06e-46f3-4f26-a222-60cffb9b3c4f-removebg-preview.png" id="2_sltbk"]
+[ext_resource type="Script" path="res://Scripts/Spr_queijo.gd" id="5_bqqac"]
+[ext_resource type="Texture2D" uid="uid://bkababuhparbl" path="res://Sprites/A____sideways_m_95dafc15-1020-453a-a6c9-c76394975d31-removebg-preview.png" id="5_qwebl"]
+
+[sub_resource type="GDScript" id="GDScript_lm633"]
+script/source = "extends Node2D
+
+var rat_lvl = 1
+var multp_queijo = 1
+var quant_queijo = 0
+var queijo_click = 1 
+var rat_prc = 4
+
+func _on_queijo_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed == false and event.button_index == 1:
+		quant_queijo += queijo_click * multp_queijo
+		$Queijo/Spr_queijo/Queijo_jump.play(\"Clicked\")
+		print(multp_queijo)
+		
+func _on_ratatouille_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed == false and event.button_index == 1 and quant_queijo >= rat_prc:
+		quant_queijo -= rat_prc
+		rat_prc *= 2
+		multp_queijo += 1
+		rat_lvl += 1
+		$Ratatouille/Spr_ratatouille/Rato_jump.play(\"Rato_click\")
+		
+func _process(delta):
+	$Control/Label_queijo.text = str(quant_queijo)
+	$Control/Label_ratatouille.text = str(rat_lvl - 1)
+	$Control/Label_rat_prc.text = str(rat_prc)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmgyl"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_ah6of"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpavc"]
+font_size = 50
+
+[sub_resource type="Animation" id="Animation_u0jbe"]
+resource_name = "Clicked"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(2, 2, 2, 2.21914),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y2h1w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.936)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ladvv"]
+_data = {
+"Clicked": SubResource("Animation_u0jbe"),
+"RESET": SubResource("Animation_y2h1w")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1evay"]
+radius = 224.0
+
+[sub_resource type="Animation" id="Animation_h7wyu"]
+resource_name = "Rato_click"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.256, 0.256), Vector2(0.281, 0.281), Vector2(0.231, 0.231), Vector2(0.256, 0.256)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60lip"]
+_data = {
+"Rato_click": SubResource("Animation_h7wyu")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maeur"]
+radius = 72.0
+
+[node name="Queijaria" type="Node2D"]
+script = SubResource("GDScript_lm633")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-3.05176e-05, -3.99998)
+scale = Vector2(2.25, 1.27344)
+texture = ExtResource("1_xgnto")
+
+[node name="Cam" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+
+[node name="Label_queijo" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -1056.0
+offset_top = -608.0
+offset_right = -872.0
+offset_bottom = -539.0
+label_settings = SubResource("LabelSettings_rmgyl")
+
+[node name="Quant_queijo" type="Sprite2D" parent="Control/Label_queijo"]
+position = Vector2(-32, 35)
+scale = Vector2(0.144, 0.128)
+texture = ExtResource("2_sltbk")
+
+[node name="Label_ratatouille" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.333
+offset_left = 648.0
+offset_top = -344.0
+offset_right = 696.016
+offset_bottom = -275.0
+label_settings = SubResource("LabelSettings_ah6of")
+
+[node name="Label_rat_prc" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 744.0
+offset_top = -464.0
+offset_right = 904.0
+offset_bottom = -376.0
+label_settings = SubResource("LabelSettings_mpavc")
+
+[node name="Queijo" type="Area2D" parent="."]
+
+[node name="Spr_queijo" type="Sprite2D" parent="Queijo"]
+scale = Vector2(1, 0.936)
+texture = ExtResource("2_2cf8r")
+script = ExtResource("5_bqqac")
+
+[node name="Queijo_jump" type="AnimationPlayer" parent="Queijo/Spr_queijo"]
+libraries = {
+"": SubResource("AnimationLibrary_ladvv")
+}
+
+[node name="Col_queijo" type="CollisionShape2D" parent="Queijo"]
+shape = SubResource("CircleShape2D_1evay")
+
+[node name="Ratatouille" type="Area2D" parent="."]
+
+[node name="Spr_ratatouille" type="Sprite2D" parent="Ratatouille"]
+position = Vector2(640, -448)
+scale = Vector2(0.256, 0.256)
+texture = ExtResource("5_qwebl")
+
+[node name="Rato_jump" type="AnimationPlayer" parent="Ratatouille/Spr_ratatouille"]
+libraries = {
+"": SubResource("AnimationLibrary_60lip")
+}
+
+[node name="Col_ratatouille" type="CollisionShape2D" parent="Ratatouille"]
+position = Vector2(640, -448)
+shape = SubResource("CircleShape2D_maeur")
+
+[connection signal="input_event" from="Queijo" to="." method="_on_queijo_input_event"]
+[connection signal="input_event" from="Ratatouille" to="." method="_on_ratatouille_input_event"]
