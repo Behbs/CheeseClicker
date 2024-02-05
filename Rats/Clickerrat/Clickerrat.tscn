@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbhtlr7d2cmst"]
+
+[ext_resource type="Script" path="res://Rats/Clickerrat/Clickerrat.gd" id="1_jnhsd"]
+[ext_resource type="Texture2D" uid="uid://bkababuhparbl" path="res://Sprites/Spr_clickerrat.png" id="1_nyqjq"]
+[ext_resource type="PackedScene" uid="uid://b64fiibdtgwir" path="res://Components/PriceComponent/PriceComponent.tscn" id="2_mleq4"]
+[ext_resource type="PackedScene" uid="uid://dd08urtyto24o" path="res://Components/HitboxComponent/Hitboxcomponent.tscn" id="3_ajw7f"]
+[ext_resource type="PackedScene" uid="uid://d0y8hde58yua7" path="res://Components/Labels/Quantity.tscn" id="5_hjhq0"]
+[ext_resource type="PackedScene" uid="uid://cxivtspl2xeem" path="res://Components/Labels/Price.tscn" id="6_wgfk0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sa2d"]
+radius = 72.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_108n7"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_876ne"]
+font_size = 40
+
+[node name="Clickerrat" type="Node2D" node_paths=PackedStringArray("price_component")]
+script = ExtResource("1_jnhsd")
+price_component = NodePath("PriceComponent")
+
+[node name="Spr_clickerrat" type="Sprite2D" parent="."]
+scale = Vector2(0.256, 0.256)
+texture = ExtResource("1_nyqjq")
+
+[node name="PriceComponent" parent="." instance=ExtResource("2_mleq4")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("price_component") instance=ExtResource("3_ajw7f")]
+price_component = NodePath("../PriceComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_1sa2d")
+
+[node name="Quantity" parent="." node_paths=PackedStringArray("price_component", "quantity_label") instance=ExtResource("5_hjhq0")]
+price_component = NodePath("../PriceComponent")
+quantity_label = NodePath("Label_quantity")
+
+[node name="Label_quantity" type="Label" parent="Quantity"]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 56.0
+offset_right = 72.0
+offset_bottom = 112.0
+label_settings = SubResource("LabelSettings_108n7")
+horizontal_alignment = 1
+
+[node name="Price" parent="." node_paths=PackedStringArray("price_component", "price_label") instance=ExtResource("6_wgfk0")]
+price_component = NodePath("../PriceComponent")
+price_label = NodePath("Label_Price")
+
+[node name="Label_Price" type="Label" parent="Price"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -28.0
+offset_right = 216.0
+offset_bottom = 28.0
+label_settings = SubResource("LabelSettings_876ne")
+
+[connection signal="on_quantity_change" from="HitboxComponent" to="." method="_on_hitbox_component_on_quantity_change"]

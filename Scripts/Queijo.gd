@@ -1,8 +1,11 @@
-extends Area2D
+extends Node2D
 
-var queijo_click = 1 
+var click_power = 1
 
-func _on_queijo_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed == false and event.button_index == 1:
-		queijaria.quant_queijo += queijo_click * queijaria.multp_click
-		$Spr_queijo/Queijo_jump.play("Clicked")
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed == true and event.button_index == 1:
+		Queijaria.quant_queijo += click_power * Queijaria.multp_queijo
+		Queijaria.max_queijo += click_power * Queijaria.multp_queijo
+
+
+

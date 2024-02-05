@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b64fiibdtgwir"]
+
+[ext_resource type="Script" path="res://Components/PriceComponent/PriceComponent.gd" id="1_ge4y7"]
+
+[node name="PriceComponent" type="Node2D"]
+script = ExtResource("1_ge4y7")

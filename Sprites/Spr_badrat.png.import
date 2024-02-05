@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://63m4kpfjtjjp"
-path="res://.godot/imported/Grater_640bcebb-d4b8-47e9-8c59-c44aded806b0-removebg-preview.png-52f5adcd326a1cf76c4a48f18ac8e6fe.ctex"
+uid="uid://c0i8tj8gt34cf"
+path="res://.godot/imported/Spr_badrat.png-a6b78cd075e07ce560579cb2ece8f4e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Grater_640bcebb-d4b8-47e9-8c59-c44aded806b0-removebg-preview.png"
-dest_files=["res://.godot/imported/Grater_640bcebb-d4b8-47e9-8c59-c44aded806b0-removebg-preview.png-52f5adcd326a1cf76c4a48f18ac8e6fe.ctex"]
+source_file="res://Sprites/Spr_badrat.png"
+dest_files=["res://.godot/imported/Spr_badrat.png-a6b78cd075e07ce560579cb2ece8f4e6.ctex"]
 
 [params]
 

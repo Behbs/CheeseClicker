@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df5u4y5mx8mbs"
-path="res://.godot/imported/cheesery bd267916-39f1-421a-89e1-938be1afed6e.png-c06bcb8bb3ba4a357ab7a5e086473746.ctex"
+uid="uid://63m4kpfjtjjp"
+path="res://.godot/imported/Spr_grater.png-3467a41605901fc9a322dbfcf5b65ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cheesery bd267916-39f1-421a-89e1-938be1afed6e.png"
-dest_files=["res://.godot/imported/cheesery bd267916-39f1-421a-89e1-938be1afed6e.png-c06bcb8bb3ba4a357ab7a5e086473746.ctex"]
+source_file="res://Sprites/Spr_grater.png"
+dest_files=["res://.godot/imported/Spr_grater.png-3467a41605901fc9a322dbfcf5b65ed7.ctex"]
 
 [params]
 

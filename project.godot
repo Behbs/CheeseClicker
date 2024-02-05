@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Queijo Clicker"
-run/main_scene="res://Cenas/queijaria.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-Queijaria="*res://Scripts/Queijaria.gd"
+Queijaria="*res://Scripts/Global.gd"
 
 [display]
 

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4gs0gdxpha2"]
+
+[ext_resource type="Script" path="res://Scripts/queijo.gd" id="1_avock"]
+[ext_resource type="Texture2D" uid="uid://c20oguasly6lr" path="res://Sprites/Spr_queijo.png" id="2_07qy3"]
+[ext_resource type="Script" path="res://Scripts/quantqueijo.gd" id="3_pj76i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dm6t1"]
+radius = 224.571
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5kfb"]
+font_size = 50
+
+[node name="Queijo" type="Node2D"]
+script = ExtResource("1_avock")
+
+[node name="Spr_queijo" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-06, 4.76837e-06)
+scale = Vector2(1.024, 1.024)
+texture = ExtResource("2_07qy3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dm6t1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_pj76i")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -1088.0
+offset_top = -576.0
+offset_right = -960.0
+offset_bottom = -507.0
+label_settings = SubResource("LabelSettings_g5kfb")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

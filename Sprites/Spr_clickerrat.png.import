@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkababuhparbl"
-path="res://.godot/imported/A____sideways_m_95dafc15-1020-453a-a6c9-c76394975d31-removebg-preview.png-c75ac45b81e877115af113be65a8b691.ctex"
+path="res://.godot/imported/Spr_clickerrat.png-7fa4587a18405d743027e8098fb2a34f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/A____sideways_m_95dafc15-1020-453a-a6c9-c76394975d31-removebg-preview.png"
-dest_files=["res://.godot/imported/A____sideways_m_95dafc15-1020-453a-a6c9-c76394975d31-removebg-preview.png-c75ac45b81e877115af113be65a8b691.ctex"]
+source_file="res://Sprites/Spr_clickerrat.png"
+dest_files=["res://.godot/imported/Spr_clickerrat.png-7fa4587a18405d743027e8098fb2a34f.ctex"]
 
 [params]
 
