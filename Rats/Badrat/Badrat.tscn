@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvm1ee3k8fitb"]
+
+[ext_resource type="Texture2D" uid="uid://c0i8tj8gt34cf" path="res://Sprites/Spr_badrat.png" id="1_7klwx"]
+[ext_resource type="PackedScene" uid="uid://b64fiibdtgwir" path="res://Components/PriceComponent/PriceComponent.tscn" id="2_clkql"]
+[ext_resource type="PackedScene" uid="uid://dd08urtyto24o" path="res://Components/HitboxComponent/Hitboxcomponent.tscn" id="2_y68cw"]
+[ext_resource type="PackedScene" uid="uid://cxivtspl2xeem" path="res://Components/Labels/Price.tscn" id="3_cnov1"]
+[ext_resource type="PackedScene" uid="uid://d0y8hde58yua7" path="res://Components/Labels/Quantity.tscn" id="5_fplc3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xfgm"]
+radius = 72.0
+
+[node name="Badrat" type="Node2D"]
+
+[node name="Spr_Badrat" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+scale = Vector2(0.256, 0.256)
+texture = ExtResource("1_7klwx")
+
+[node name="PriceComponent" parent="." instance=ExtResource("2_clkql")]
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_y68cw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_6xfgm")
+
+[node name="Price" parent="." instance=ExtResource("3_cnov1")]
+
+[node name="price_label" type="Label" parent="Price"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Quantity" parent="." instance=ExtResource("5_fplc3")]
+
+[node name="quantity_label" type="Label" parent="Quantity"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

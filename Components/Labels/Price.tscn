@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxivtspl2xeem"]
+[gd_scene load_steps=3 format=3 uid="uid://cxivtspl2xeem"]
 
 [ext_resource type="Script" path="res://Components/Labels/Price.gd" id="1_1fjdd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aym25"]
+font_size = 40
 
 [node name="Price" type="Control"]
 layout_mode = 3
@@ -10,3 +13,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1fjdd")
+
+[node name="Label_Price" type="Label" parent="."]
+offset_left = 80.0
+offset_top = -28.0
+offset_right = 216.0
+offset_bottom = 28.0
+text = "Price"
+label_settings = SubResource("LabelSettings_aym25")

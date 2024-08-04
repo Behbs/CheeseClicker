@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0y8hde58yua7"]
+[gd_scene load_steps=3 format=3 uid="uid://d0y8hde58yua7"]
 
 [ext_resource type="Script" path="res://Components/Labels/Quantity.gd" id="1_knm6g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3u7w"]
+font_size = 40
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,3 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_knm6g")
+
+[node name="Label_quantity" type="Label" parent="."]
+offset_left = -72.0
+offset_top = 56.0
+offset_right = 72.0
+offset_bottom = 112.0
+text = "Quant"
+label_settings = SubResource("LabelSettings_i3u7w")
+horizontal_alignment = 1

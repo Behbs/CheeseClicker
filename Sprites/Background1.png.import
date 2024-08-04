@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c20oguasly6lr"
-path="res://.godot/imported/Spr_queijo.png-e39123c58897d1ea4fb8f409d939e6b4.ctex"
+uid="uid://dh63777ug1745"
+path="res://.godot/imported/Background1.png-d101c6ec6fbb572e80e9db7475237b2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Spr_queijo.png"
-dest_files=["res://.godot/imported/Spr_queijo.png-e39123c58897d1ea4fb8f409d939e6b4.ctex"]
+source_file="res://Sprites/Background1.png"
+dest_files=["res://.godot/imported/Background1.png-d101c6ec6fbb572e80e9db7475237b2b.ctex"]
 
 [params]
 

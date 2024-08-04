@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnksjk665dcgd"
-path="res://.godot/imported/Spr_quant.png-95b15bac6670c9b194313750d765d215.ctex"
+uid="uid://dmlepj38jwc2c"
+path="res://.godot/imported/Cheesewheel.png-604e18d961c5d38af3e2b3b65c3b0840.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Spr_quant.png"
-dest_files=["res://.godot/imported/Spr_quant.png-95b15bac6670c9b194313750d765d215.ctex"]
+source_file="res://Sprites/Cheesewheel.png"
+dest_files=["res://.godot/imported/Cheesewheel.png-604e18d961c5d38af3e2b3b65c3b0840.ctex"]
 
 [params]
 
